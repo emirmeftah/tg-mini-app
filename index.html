@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>УРОК - Mini App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Хедер с логотипом -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="logo.png" alt="УРОК" class="logo">
+            <h1 class="app-title">УРОК</h1>
+        </div>
+        <p class="tagline">Обучение с удовольствием! 🎓</p>
+    </header>
+
+    <!-- Герой секция с счастливыми людьми -->
+    <section class="hero">
+        <div class="hero-images">
+            <div class="hero-image-container">
+                <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=300&h=200&fit=crop" alt="Счастливый ребенок" class="hero-image">
+            </div>
+            <div class="hero-image-container">
+                <img src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=300&h=200&fit=crop" alt="Счастливая семья" class="hero-image">
+            </div>
+            <div class="hero-image-container">
+                <img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=300&h=200&fit=crop" alt="Дети учатся" class="hero-image">
+            </div>
+        </div>
+        <div class="hero-text">
+            <h2>Развивайте детей играючи!</h2>
+            <p>Карточки, картинки и песни для обучения</p>
+        </div>
+    </section>
+
+    <!-- Каталог товаров -->
+    <section class="catalog">
+        <div class="section-header">
+            <img src="logo.png" alt="УРОК" class="section-logo">
+            <h2>Наши продукты</h2>
+        </div>
+        
+        <div class="products-grid">
+            <!-- Товар 1 -->
+            <div class="product-card" data-product="Подписка для карточек с примерами на год">
+                <div class="product-icon">📚</div>
+                <div class="product-badge">Хит продаж</div>
+                <h3 class="product-title">Подписка для карточек с примерами</h3>
+                <p class="product-duration">на 1 год</p>
+                <div class="product-features">
+                    <span class="feature">✓ 1000+ карточек</span>
+                    <span class="feature">✓ Все предметы</span>
+                    <span class="feature">✓ Обновления</span>
+                </div>
+                <div class="product-price">
+                    <span class="price-value">500</span>
+                    <span class="price-currency">₽</span>
+                </div>
+                <button class="buy-button" onclick="buyProduct('Подписка для карточек с примерами на год', 500)">
+                    <span class="button-text">Купить</span>
+                    <span class="button-icon">🛒</span>
+                </button>
+            </div>
+
+            <!-- Товар 2 -->
+            <div class="product-card" data-product="Создание картинок безлимитов">
+                <div class="product-icon">🎨</div>
+                <div class="product-badge sale">Выгодно</div>
+                <h3 class="product-title">Создание картинок</h3>
+                <p class="product-duration">безлимит</p>
+                <div class="product-features">
+                    <span class="feature">✓ AI генерация</span>
+                    <span class="feature">✓ Любые стили</span>
+                    <span class="feature">✓ HD качество</span>
+                </div>
+                <div class="product-price">
+                    <span class="price-value">20</span>
+                    <span class="price-currency">₽</span>
+                </div>
+                <button class="buy-button" onclick="buyProduct('Создание картинок безлимитов', 20)">
+                    <span class="button-text">Купить</span>
+                    <span class="button-icon">🛒</span>
+                </button>
+            </div>
+
+            <!-- Товар 3 -->
+            <div class="product-card" data-product="Подписка на создание песни">
+                <div class="product-icon">🎵</div>
+                <div class="product-badge new">Новинка</div>
+                <h3 class="product-title">Подписка на создание песни</h3>
+                <p class="product-duration">персональная</p>
+                <div class="product-features">
+                    <span class="feature">✓ Уникальные песни</span>
+                    <span class="feature">✓ Детские темы</span>
+                    <span class="feature">✓ MP3 формат</span>
+                </div>
+                <div class="product-price">
+                    <span class="price-value">200</span>
+                    <span class="price-currency">₽</span>
+                </div>
+                <button class="buy-button" onclick="buyProduct('Подписка на создание песни', 200)">
+                    <span class="button-text">Купить</span>
+                    <span class="button-icon">🛒</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция с отзывами/доверием -->
+    <section class="trust-section">
+        <div class="trust-images">
+            <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=150&h=150&fit=crop" alt="Счастливый ученик" class="trust-image">
+            <img src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?w=150&h=150&fit=crop" alt="Ребенок с книгой" class="trust-image">
+            <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=150&h=150&fit=crop" alt="Счастливая девочка" class="trust-image">
+        </div>
+        <p class="trust-text">Более <strong>10,000</strong> счастливых учеников!</p>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <img src="logo.png" alt="УРОК" class="footer-logo">
+        <p>© 2024 УРОК. Все права защищены.</p>
+        <p class="footer-tagline">Учиться — это весело! 🌟</p>
+    </footer>
+
+    <!-- Уведомление -->
+    <div class="notification" id="notification">
+        <span class="notification-icon">✅</span>
+        <span class="notification-text">Товар выбран!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

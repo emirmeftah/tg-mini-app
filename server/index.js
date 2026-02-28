@@ -42,7 +42,7 @@ app.use('/api/contacts', contactRoutes);
 app.use('/api/messages', messageRoutes);
 
 // ── Static files (SPA) ────────────────────────────────────────────────────
-const publicDir = path.join(__dirname, '..', 'public');
+const publicDir = process.env.MIR_PUBLIC_DIR || path.join(__dirname, '..', 'public');
 app.use(express.static(publicDir));
 
 // Fallback: serve index.html for any unmatched route (SPA client-side routing).

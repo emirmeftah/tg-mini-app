@@ -3,7 +3,7 @@
 const Database = require('better-sqlite3');
 const path = require('path');
 
-const DB_PATH = path.join(__dirname, '..', '..', 'mir_messenger.db');
+const DB_PATH = process.env.MIR_DB_PATH || path.join(__dirname, '..', '..', 'mir_messenger.db');
 
 let db;
 
